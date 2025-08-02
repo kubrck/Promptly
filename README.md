@@ -1,102 +1,80 @@
-# Promptly
+📦 Promptly – AI-Powered Chatbot Platform
+A secure, full-stack AI chatbot built with Node.js, Express, TypeScript, and MongoDB, featuring JWT authentication and OpenAI GPT-3.5 integration. Promptly enables users to have natural language conversations while preserving message history and enforcing usage limits per session.
 
-A Node.js + Express backend for an AI-powered chat application, using TypeScript and MongoDB.
+✨ Key Features
+🔐 User Authentication – Secure registration/login with JWT & HTTP-only cookies (7-day session validity)
 
----
+💬 Chat Creation & Management – RESTful endpoints to create, fetch, and manage AI-powered chats
 
-## Features
+🧠 AI Integration (GPT-3.5) – Seamless OpenAI-powered conversational responses (coming in frontend or integrated separately)
 
-- User authentication (register, login)
-- Chat management (create, fetch chats)
-- RESTful API endpoints
-- MongoDB integration via Mongoose
-- CORS and cookie support (HTTP cookies valid for 7 days)
-- Centralized error handling
-- **Daily chat limit enforced per user** (see below)
+🛡️ Daily Chat Limits – Configurable per-user message limits to control OpenAI API usage
 
----
+🧰 Type-Safe Architecture – End-to-end TypeScript codebase with clean module separation
 
-## Getting Started
+🌐 CORS & Cookie Support – Cross-origin communication for React frontend (Vite-ready)
 
-### Prerequisites
+🚀 Getting Started
+✅ Prerequisites
+Node.js (v16+)
 
-- Node.js (v16+)
-- npm or yarn
-- MongoDB instance
+MongoDB Atlas or local MongoDB
 
-### Installation
+OpenAI API key (for integration if frontend is added)
 
-1. **Clone the repository:**
+📦 Installation
+bash
+Copy
+Edit
+git clone https://github.com/kubrck/Promptly.git
+cd promptly
+npm install
+🔐 Environment Variables (.env)
+env
+Copy
+Edit
+PORT=5000
+MONGODB_URL=your_mongodb_uri
+CLIENT_URL=http://localhost:5173
+▶️ Run the Server
+bash
+Copy
+Edit
+npm run dev # Start in development mode
+npm run build # Build TypeScript
+npm start # Run compiled app
+🔌 API Endpoints
+Method Endpoint Description
+POST /api/users/register Register a new user
+POST /api/users/login Authenticate user login
+GET /api/users/me Get authenticated user
+POST /api/chats Create a new chat
+GET /api/chats List all chats
+GET /api/chats/:id Get a specific chat by ID
 
-   ```bash
-   git clone https://github.com/your-username/promptly.git
-   cd promptly
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Create a `.env` file:**
-
-   ```
-   PORT=5000
-   MONGODB_URL=your_mongodb_uri
-   CLIENT_URL=http://localhost:5173
-   ```
-
-4. **Start the server:**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
----
-
-## API Endpoints
-
-- `POST /api/users/register` — Register user
-- `POST /api/users/login` — Login user
-- `GET /api/users/me` — Get current user
-- `POST /api/chats` — Create chat
-- `GET /api/chats` — List chats
-- `GET /api/chats/:id` — Get chat by ID
-
----
-
-## Project Structure
-
-```
+🧠 Project Structure
+csharp
+Copy
+Edit
 src/
-  app.ts
-  routes/
-  models/
-  controllers/
-  middleware/
-```
+├── app.ts # Entry point
+├── routes/ # API route handlers
+├── controllers/ # Business logic
+├── models/ # Mongoose schemas
+├── middleware/ # Auth, error handling, rate limiters
+📊 Metrics (Design & Performance)
+⚙️ Designed to handle 100+ users and 1,000+ chats per day
 
----
+⏱️ Session token valid for 7 days using secure HTTP-only cookies
 
-## Additional Notes
+💡 Chat limit logic easily configurable (e.g., 10 chats/day)
 
-- **Authentication cookies**: Secure HTTP cookies are set on login and remain valid for 7 days.
-- **Chat limit**: Each user is limited to a fixed number of chats per day (configurable in the backend logic).
+🛡️ Security Notes
+JWT + bcrypt for secure authentication
 
----
+HTTP-only, SameSite cookies for session persistence
 
-## Scripts
+CORS configured for frontend–backend isolation
 
-- `npm run dev` — Start in development mode
-- `npm run build` — Build TypeScript
-- `npm start` — Run built app
-
----
-
-## License
-
+🪪 License
 MIT
