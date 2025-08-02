@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Modern JS features
+    "module": "CommonJS", // Works with Node.js without .js extensions
+    "moduleResolution": "node", // Resolve modules like Node does
+    "outDir": "dist", // Compiled JS output
+    "rootDir": "src", // Where your .ts files live
+    "esModuleInterop": true, // Makes `import express from "express"` work
+    "strict": true, // Enables all type safety checks
+    "allowSyntheticDefaultImports": true // Helps with default imports
+  },
+  "include": ["src"]
+}
