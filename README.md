@@ -1,4 +1,4 @@
-# AI ChatBot Backend
+# Promptly
 
 A Node.js + Express backend for an AI-powered chat application, using TypeScript and MongoDB.
 
@@ -29,8 +29,8 @@ A Node.js + Express backend for an AI-powered chat application, using TypeScript
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/ai-chatbot-backend.git
-   cd ai-chatbot-backend
+   git clone https://github.com/your-username/promptly.git
+   cd promptly
    ```
 
 2. **Install dependencies:**
